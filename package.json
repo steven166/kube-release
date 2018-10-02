@@ -1,0 +1,45 @@
+{
+  "name": "kube-release",
+  "version": "0.1.0",
+  "description": "Manage Kubernetes releases",
+  "main": "dist/index.js",
+  "repository": "ssh://git@stash.maxxton.com:7999/mxtu/frontend-proxy.git",
+  "author": "S. Hermans <s.hermans@maxxton.com>",
+  "license": "MIT",
+  "bin": {
+    "kube-release": "cli/cli.js",
+    "kubectl-release": "cli/cli.js"
+  },
+  "scripts": {
+    "debug": "./node_modules/.bin/nodemon --debug-brk=9000 --expose_debug_as=v8debug ./dist/index.js",
+    "build": "rm -rf dist/* && (mkdir dist || true) && cp package.json README.md dist && ./node_modules/.bin/tsc -p tsconfig.build.json",
+    "setup": "yarn --freeze-lockfile",
+    "lint": "./node_modules/.bin/tslint -e **/node_modules/** --project tsconfig.json",
+    "watch": "rm -rf dist/* && (mkdir dist || true) && cp package.json README.md dist && ./node_modules/.bin/tsc -p tsconfig.json -w",
+    "clean": "rm -rf dist/*",
+    "test": "rm -rf dist/* && (mkdir dist || true) && cp package.json README.md dist && ./node_modules/.bin/tsc -p tsconfig.json && ./node_modules/.bin/nyc --reporter=lcovonly mocha \"./dist/**/*.spec.js\""
+  },
+  "dependencies": {
+    "atob": "^2.0.3",
+    "chai": "^4.1.2",
+    "command-script": "^1.1.2",
+    "js-yaml": "^3.10.0",
+    "json-stream": "^1.0.0",
+    "prom-client": "^11.1.1",
+    "request": "^2.83.0",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/js-yaml": "^3.10.1",
+    "@types/mocha": "^2.2.46",
+    "@types/node": "^9.3.0",
+    "@types/request": "^2.0.11",
+    "@types/winston": "^2.3.7",
+    "mocha": "^4.1.0",
+    "nodemon": "^1.14.12",
+    "nyc": "^11.4.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  }
+}
