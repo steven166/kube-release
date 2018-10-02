@@ -1,7 +1,7 @@
 {
   "name": "kube-release",
   "version": "0.1.0",
-  "description": "Manage Kubernetes releases",
+  "description": "Kube-Release Manages the release cycle of multiple Kubernetes manifests as one Release.",
   "main": "dist/index.js",
   "repository": "ssh://git@stash.maxxton.com:7999/mxtu/frontend-proxy.git",
   "author": "S. Hermans <s.hermans@maxxton.com>",
