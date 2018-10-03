@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Kube-Release Manages the release cycle of multiple Kubernetes manifests as one Release.",
   "main": "dist/index.js",
-  "repository": "ssh://git@stash.maxxton.com:7999/mxtu/frontend-proxy.git",
+  "repository": "https://github.com/steven166/kube-release.git",
   "author": "S. Hermans <s.hermans@maxxton.com>",
   "license": "MIT",
   "bin": {
@@ -25,6 +25,7 @@
     "command-script": "^1.1.2",
     "js-yaml": "^3.10.0",
     "json-stream": "^1.0.0",
+    "kubernetes-client": "^6.1.0",
     "prom-client": "^11.1.1",
     "request": "^2.83.0",
     "winston": "^2.4.0"
